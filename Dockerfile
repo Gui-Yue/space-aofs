@@ -29,6 +29,7 @@ RUN apk add wget \
         && export PATH=$PATH:/go/bin && cd /opt/ \
         && go env -w CGO_ENABLED=0 \
         && go env -w GO111MODULE=on \
+        && go env -w GOPROXY="https://goproxy.io,direct" \
         && go build -o space-aofs
 
 FROM alpine:edge
